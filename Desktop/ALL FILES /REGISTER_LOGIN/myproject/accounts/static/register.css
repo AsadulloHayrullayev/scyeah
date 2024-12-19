@@ -1,0 +1,125 @@
+/* Reset margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Use Google Fonts */
+body, html {
+    font-family: 'Poppins', sans-serif; /* Poppins for a modern feel */
+    background: linear-gradient(5deg, #74ebd5, #acb6e5);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 600px; /* Increased max-width for wider form */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-10px);
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #333;
+    font-family: 'Raleway', sans-serif; /* Raleway for headings */
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+form {
+    width: 100%;
+}
+
+form p {
+    margin-bottom: 20px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form input[type="email"]:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #74ebd5;
+    box-shadow: 0 0 10px rgba(116, 189, 213, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #74ebd5;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #67d0c2;
+    transform: translateY(-2px);
+}
+
+button:active {
+    background: #5bc1b3;
+    transform: translateY(2px);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+        max-width: 90%; 
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    form input[type="text"],
+    form input[type="password"],
+    form input[type="email"],
+    form select,
+    form textarea {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 1.1rem;
+    }
+}

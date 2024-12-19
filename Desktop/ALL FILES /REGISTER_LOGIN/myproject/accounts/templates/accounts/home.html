@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <h1>My Website</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="logout-btn" class="logout-btn" onclick="window.location.href='{% url 'logout' %}'">Log Out</button>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h2>Welcome to Our Website</h2>
+        <p>We offer the best services to help you succeed.</p>
+        <a href="#contact" class="btn">Contact Us</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <p>We are a passionate team dedicated to providing the highest quality solutions for your needs.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <h2>Our Services</h2>
+      <div class="service-cards">
+        <div class="card">
+          <h3>Web Development</h3>
+          <p>Building responsive, modern websites to help you engage with your audience.</p>
+        </div>
+        <div class="card">
+          <h3>Mobile Apps</h3>
+          <p>Creating user-friendly mobile applications for iOS and Android.</p>
+        </div>
+        <div class="card">
+          <h3>Digital Marketing</h3>
+          <p>Helping your business grow through targeted online marketing campaigns.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <form method="post">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
